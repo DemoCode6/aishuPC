@@ -1,0 +1,16 @@
+<view class="group_title">
+  <view>个人群组文档</view>
+  <image src="{{bool ? img : img1}}" bindtap="ishowClick"></image>
+</view>
+<view class="group_main" wx:if="{{bool}}">
+  <block wx:for="{{group_file}}" wx:key="item">
+    <view class="group_main_text" bindtap="jump" data-docid="{{item.docid}}" data-docname="{{item.name}}">
+      <image src="../assets/img/folder.png"></image>
+      <view class="group_main_text1">
+        <view>{{item.name}}</view>
+        <view>{{item.editor}}最后修改于 ({{item.modified}})</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="subscribe" bindtap="subscribe"><image src="../assets/img/subscribe.png"></image></view>

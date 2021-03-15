@@ -1,0 +1,15 @@
+.group_main image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.group_main .group_main_text{display: flex;align-items: center;padding: 20rpx 40rpx;box-sizing: border-box;}
+.group_main .group_main_text:nth-of-type(2n){background: rgb(249, 250, 253);}
+.group_main_text .group_main_text1{padding: 0 20rpx;}
+.group_main_text .group_main_text1 view:nth-of-type(1){font-size: 30rpx;padding-bottom: 10rpx;width: 580rpx;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.group_main_text .group_main_text1 view:nth-of-type(2){color: #868686;font-size: 26rpx;letter-spacing: normal;}
+.upload{display: flex;position: fixed;bottom: 0;width: 100%;}
+.upload view{
+  width: 50%;background:#0d8aff;color: #fff;
+  text-align: center;line-height: 110rpx;
+}
+.upload view:nth-of-type(2){border-left: 2rpx solid #c5c7ff;box-sizing: border-box;}

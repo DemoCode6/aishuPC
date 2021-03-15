@@ -1,0 +1,15 @@
+<view class="group_main">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="group_main_text" bindtap="previewClick" data-docid="{{item.docid}}" data-name="{{item.name}}">
+      <image src="../assets/img/file.png"></image>
+      <view class="group_main_text1">
+        <view>{{item.name}}</view>
+        <view>{{item.editor}}最后修改于 ({{item.modified}})</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="upload">
+  <view bindtap="uploadImgClick">点击上传图片</view>
+  <view bindtap="uploadFileClick">点击上传文件</view>
+</view>

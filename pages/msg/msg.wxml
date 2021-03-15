@@ -1,0 +1,24 @@
+<view class="login_main_button">
+    <block wx:for="{{titles}}" wx:key="titles">
+      <view wx:show="{{identity == '老师'}}" class="{{activeindex==index ? 'active':''}}" bindtap="headelcilck" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+<!-- 系统消息 -->
+<view class="group_main" wx:if="{{activeindex==0}}">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="group_main_text" bindtap="jump" data-docid="{{item.docid}}">
+      <image src="../assets/img/folder.png"></image>
+      <view class="group_main_text1">
+        <view>{{item.url}}</view>
+        <view>{{item.sender}}给{{item.accessorname}}{{item.type}}</view>
+        <view>{{item.allowvalue}}</view>
+        <view>有效期至：{{item.end}}</view>
+        <!-- <view>所在位置：<navigator url="{{item.url}}" open-type='switchTab'>{{item.url}}</navigator></view> -->
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 学生上传消息 -->
+<view wx:if="{{activeindex==1}}">
+  <button bindtap="sendClick">发送</button>
+</view>

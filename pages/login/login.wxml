@@ -1,0 +1,30 @@
+<view class="login_logo">
+  <image src="/pages/assets/img/logo.png"></image>
+</view>
+<view class="login_title">教学群组作业收发管理系统</view>
+<view class="login_main">
+  <view class="login_main_title">请选择您的身份：</view>
+  <view class="login_main_button">
+    <block wx:for="{{titles}}" wx:key="titles">
+      <view class="{{activeindex==index ? 'active':''}}" bindtap="headelcilck" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <view class="login_input" wx:if="{{activeindex==1}}">
+    <image src="../assets/img/teacher.png"></image>
+    <picker bindchange="teacherInput" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        点击选择老师：{{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="login_input">
+    <image src="../assets/img/user.png"></image>
+    <input placeholder="请输入账号" bindinput="nameInput" value='{{name}}' placeholder-class="placeholder" />
+  </view>
+  <view class="login_input">
+    <image src="../assets/img/pwd.png"></image>
+    <input password placeholder="请输入密码" bindinput="pwdInput" value='{{pwd}}' placeholder-class="placeholder" />
+  </view>
+  <!-- <view class="login_sub" bindtap="submit">登录</view> -->
+  <button class="login_sub" bindtap="submit" open-type="getUserInfo">登录</button>
+</view>

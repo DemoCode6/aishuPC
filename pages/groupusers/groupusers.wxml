@@ -1,0 +1,40 @@
+<view class="gub" wx:if="{{identity == '老师'}}">
+  <view class="class_style" bindtap="sendmsg">发送提交作业通知</view>
+  <view>
+    <view class="class_style class_style1" bindtap="showModal">查看学生作业统计</view>
+    <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+      <view class="modals-cancel" bindtap="hideModal"></view>
+      <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+        <view class="seework">
+          <view class="seework_item">
+            <view class="sub_box"><image class="sub" src="../assets/img/sub.png" />已提交({{sub}})</view>
+            <scroll-view scroll-y class="scrollstyle">
+              <block wx:for="{{nicknameArr_sub}}" wx:key="item">
+                <view>{{item}}</view>
+              </block>
+            </scroll-view>
+          </view>
+          <view class="seework_item">
+            <view class="sub_box"><image class="sub" src="../assets/img/unsub.png" />未提交({{unsub}})</view>
+            <scroll-view scroll-y class="scrollstyle">
+              <block wx:for="{{nicknameArr_unsub}}" wx:key="item">
+                <view>{{item}}</view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="group_main">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="group_main_text" bindtap="jump" data-docid="{{item.docid}}" data-name="{{item.name}}">
+      <image src="../assets/img/folder.png"></image>
+      <view class="group_main_text1">
+        <view>{{item.name}}</view>
+        <view>{{item.editor}}最后修改于 ({{item.modified}})</view>
+      </view>
+    </view>
+  </block>
+</view>

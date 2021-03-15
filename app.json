@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/group/group",
+    "pages/msg/msg",
+    "pages/groupusers/groupusers",
+    "pages/groupusersitem/groupusersitem"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "群组作业收发系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#00acfe",
+    "list": [{
+        "pagePath": "pages/group/group",
+        "text": "群组管理",
+        "iconPath": "/pages/assets/img/group1.png",
+        "selectedIconPath": "/pages/assets/img/group.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "消息管理",
+        "iconPath": "/pages/assets/img/msg1.png",
+        "selectedIconPath": "/pages/assets/img/msg.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
